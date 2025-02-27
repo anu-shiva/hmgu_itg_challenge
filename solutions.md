@@ -152,7 +152,7 @@ awk 'BEGIN {OFS="\t"} NR==1 {printf "sample_name"; for (i=1; i<=(NF-6)/2; i++) p
 
 > 15. This file contains eQTL overlap data for SNPs that arise as signals in GWAS for several phenotypes. Reformat this file to have one line per SNP/phenotype pair, and two additional columns formatted as such : GENE1(tissue1, tissue2),GENE2(tissue1, tissue3), and GENE1(2),GENE2(2). Each line should contain the SNP/phenotype pair, all genes found overlapping and their respective tissues, and all genes found overlapping with the number of tissues.
 
-Output_reformated_file
+[Reformated_output_file](output/Bioinformatics_Q15.txt)
 
 ---
 
