@@ -7,10 +7,10 @@
 > 1. A user has several versions of R installed in their path. Each version of R has a number of locally installed libraries. The user is confused, and would like to know which library is installed for each version of R. Can you write a command to help them out?
 
 ```sh
-which -a R | while read Rbin; do 
+which -a R | while IFS= read -r Rbin; do 
   echo "R at: $Rbin" 
-  "$Rbin" -e '.libPaths(); installed.packages()[, c("Package", "Version")]'
-  echo "----------------------"
+  "$Rbin" --quiet --no-save -e 'cat(.libPaths(), "\n"); try(installed.packages()[, c("Package", "Version")])'
+  echo "--"
 done
 ```
 
